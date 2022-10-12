@@ -1,2 +1,2 @@
-const apiurl = "http://192.168.0.104:4000"
+const apiurl = "https://ls-food-co-back.herokuapp.com/"
 export default apiurl
