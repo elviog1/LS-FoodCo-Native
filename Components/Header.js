@@ -12,9 +12,9 @@ export default function Header() {
 
 const styles = StyleSheet.create({
     container:{
-        // display:"flex",
         alignItems:"center",
         paddingTop:10,
+
     },
     img:{
         maxWidth:150,

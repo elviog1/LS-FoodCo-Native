@@ -4,7 +4,7 @@ import React from 'react'
 export default function Footer() {
   return (
     <View style={styles.container}>
-      <Text>Our Social Mediaa</Text>
+      <Text style={styles.socialtext}>Our Social Media</Text>
       <View style={styles.social}>
         <Image style={styles.img} source={require("../assets/ig.png")} />
         <Image style={styles.img} source={require("../assets/wp.png")} />
@@ -17,7 +17,6 @@ export default function Footer() {
         <Image style={styles.logo} source={require("../assets/mostachon.png")} />
         <Text>Terms / About Us</Text>
       </View>
-      
     </View>
   )
 }
@@ -30,7 +29,7 @@ const styles = StyleSheet.create({
     img:{
         width:40,
         height:40,
-        marginHorizontal:5
+        marginHorizontal:5,
     },
     logo:{
         width:90,
@@ -41,5 +40,8 @@ const styles = StyleSheet.create({
         flexDirection:"row",
         marginVertical:25
     },
+    socialtext:{
+      marginTop:20
+    }
     
 })
