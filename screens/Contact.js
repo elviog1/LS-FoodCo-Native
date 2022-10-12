@@ -1,12 +1,15 @@
 import { View, Text, Button,StyleSheet } from 'react-native'
-import React from 'react'
+import React, { useRef } from 'react'
 import { ScrollView, TextInput } from 'react-native-gesture-handler'
 import MapView from "react-native-maps";
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
 export default function Contact() {
+  const scrollRef = useRef()
   return (
-    <ScrollView>
-
+    <ScrollView ref={scrollRef}>
+      <Header />
     <View style={styles.container}>
       <Text style={styles.contact}>Contact</Text>
       <Text style={styles.description}>📬 lsfoodco@gmail.com</Text>
@@ -29,6 +32,8 @@ export default function Contact() {
       </View>
       <Button title='Send'></Button>
     </View>
+    <Footer />
+    <Text style={styles.goTop} onPress={()=> scrollRef.current.scrollTo({ x: 0, y: 0, animated: true })}>Top</Text>
       </ScrollView>
   )
 }
@@ -59,5 +64,14 @@ const styles = StyleSheet.create({
   },
   map:{
     height: 300
-    }
+  },
+  goTop:{
+    color: "white",
+    fontSize: 25,
+    paddingVertical:20,
+    backgroundColor:"#32D",
+    width: "100%",
+    textAlign: "center",
+    fontWeight: "bold"
+  },
 })

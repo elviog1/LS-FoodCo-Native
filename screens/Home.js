@@ -1,17 +1,29 @@
-import { View, Text, ScrollView,StyleSheet,Image, ImageBackground } from 'react-native'
+import { View, Text, ScrollView,StyleSheet,Image, ImageBackground,TextInput } from 'react-native'
 import React, { useRef } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 
 export default function Home() {
     const scrollRef = useRef()
+
+    // const screenHeight = Dimensions.get('window').height;
+    // const screenWidth = Dimensions.get('window').width;
+
+    // const BackgroundBanner = ()=>{
+    //   return (
+    //     <View>
+    //       <ImageBackground style={styles.banner} source={require("../assets/banner.webp")} resizeMode="cover">
+    //       <Text styles={styles.textbanner}>aasdasdsdAA</Text>
+    //     </ImageBackground>
+    //     </View>
+    //   )
+    // }
   return (
     <ScrollView ref={scrollRef}>
         <View>
         <Header />
         {/* <Image style={styles.img} source={require("../assets/banner.webp")} /> */}
-        <ImageBackground style={styles.banner} source={require("../assets/banner.webp")} resizeMode="cover">
-          {/* <Text styles={styles.textbanner}>aasdasdsd</Text> */}
+        <ImageBackground style={styles.banner} source={require("../assets/banner.webp")}  resizeMode="cover">
         </ImageBackground>
 
         <Text style={styles.bold}>Good heath and well-being go hand in hand</Text>
@@ -53,15 +65,26 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold"
   },
-  img:{
-    height:300,
-    resizeMode:"contain",
-    width:null
-  },
+  // img:{
+  //   height:screenHeight,
+  //   resizeMode:"contain",
+  //   width:screenWidth
+  // },
   banner:{
     height:300,
-    marginTop:30
+    marginTop:30,
+    alignItems:"center",
+    justifyContent:"center",
+
   },
+  // textbanner:{
+  //   backgroundColor:"red",
+  //   width:100,
+  //   height:100,
+  //   margin: 12,
+  //   borderWidth: 2,
+  //   padding: 10,
+  // },
   textBox2:{
     backgroundColor:"#f9e972",
     fontWeight:"bold",
@@ -84,5 +107,6 @@ const styles = StyleSheet.create({
     textAlign:"center",
     justifyContent:"center",
     display:"flex",
-  }
+  },
+  
 })

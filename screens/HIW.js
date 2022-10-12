@@ -1,18 +1,22 @@
 import { View, Text,StyleSheet,Image, ImageBackground } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
+import Footer from '../Components/Footer'
+import Header from '../Components/Header'
 
 export default function HIW() {
 
   const [click,setClick] = useState(false)
+  const scrollRef = useRef()
 
   
 
 
 
   return (
-    <ScrollView>
+    <ScrollView ref={scrollRef}>
     <View>
+      <Header />
       <Text style={styles.title}>How it works?</Text>
       <View style={styles.imgBox}>
         <View style={styles.box}>
@@ -74,6 +78,8 @@ export default function HIW() {
 
       </View>
     </View>
+    <Footer />
+    <Text style={styles.goTop} onPress={()=> scrollRef.current.scrollTo({ x: 0, y: 0, animated: true })}>Top</Text>
 </ScrollView>
   )
 }
@@ -129,6 +135,15 @@ const styles = StyleSheet.create({
     textAlign:"center",
     // fontWeight:"bold",
     fontSize:50
+  },
+  goTop:{
+    color: "white",
+    fontSize: 25,
+    paddingVertical:20,
+    backgroundColor:"#32D",
+    width: "100%",
+    textAlign: "center",
+    fontWeight: "bold"
   },
   
 })
