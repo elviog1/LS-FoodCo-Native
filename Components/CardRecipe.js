@@ -10,10 +10,10 @@ export default function CardRecipe(props) {
     const printRecipe = (item) =>(
         <View style={styles.container}>
         <View style={styles.containerCard}>
-            {/* <Pressable onPress={() =>navigation.navigate('',{id:item._id})}> */}
+            <Pressable onPress={() =>navigation.navigate('Detail',{id:item.id})}>
                     <Image style={styles.img} source={{uri:`${item.image}`}} />
                     <Text style={styles.name}>{item.title}</Text>
-            {/* </Pressable> */}
+            </Pressable>
         </View>
     </View>
     )

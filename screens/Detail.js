@@ -7,13 +7,10 @@ import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 
 export default function Detail(props) {
-    // props.route.params.id? id=props.route.params.id: id=props
     const scrollRef = useRef()
     let navigation= useNavigation()
-    const {data} = useGetOneRecipeQuery("633f95361b9e7faf8aceb1f2")
+    const {data} = useGetOneRecipeQuery(props.route.params.id)
     const [recipe,setRecipe] = useState()
-    // console.log(props.route)
-    // console.log(data)
     useEffect(()=>{
         if(data){
             setRecipe(data)
@@ -59,7 +56,7 @@ export default function Detail(props) {
         <Header />
         <ImageBackground style={styles.banner} source={require("../assets/banner.webp")}  resizeMode="cover">
         </ImageBackground>
-        {/* {printRecipe(data)} */}
+        {data ? printRecipe(data) : null}
         <Footer />
         <Text style={styles.goTop} onPress={()=> scrollRef.current.scrollTo({ x: 0, y: 0, animated: true })}>Top</Text>
         </View>
