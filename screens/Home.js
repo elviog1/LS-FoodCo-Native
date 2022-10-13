@@ -36,7 +36,7 @@ export default function Home() {
         </ImageBackground>
         <Text style={styles.textBox2}>Zero to landfill</Text>
         <Text style={styles.textDescription}>All our packaging is recyclable or re-useable and we operate a no-waste policy in our store.</Text>
-        <CardBox />
+        {/* <CardBox /> */}
         <Footer />
         </View>
         <Text style={styles.goTop} onPress={()=> scrollRef.current.scrollTo({ x: 0, y: 0, animated: true })}>Top</Text>

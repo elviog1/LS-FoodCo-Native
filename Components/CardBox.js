@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
         flexWrap:"wrap",
         flexDirection:"row",
         marginTop:20,
-        // alignItems:"center"
         justifyContent:"center"
     },
     containerBox:{
