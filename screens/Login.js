@@ -1,9 +1,9 @@
-import { View, Text,StyleSheet,Button } from 'react-native'
+import { View, Text,StyleSheet,Button, Alert } from 'react-native'
 import React, { useEffect, useRef, useState } from 'react'
 import { ScrollView, TextInput } from 'react-native-gesture-handler'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
-import { useSigninMutation, useSignoutMutation } from '../Features/usersAPI'
+import { useSigninMutation, useSignoutMutation, useUserSignInMutation } from '../Features/usersAPI'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function Login() {
@@ -13,13 +13,13 @@ export default function Login() {
   const [user,setUser] = useState()
   const scrollRef = useRef()
 
-  const [signIn] = useSigninMutation()
-  const [useSignOUT] = useSignoutMutation()
+  const [signIn] = useUserSignInMutation()
+  // const [useSignOUT] = useSignoutMutation()
 
   const signOUT = ()=>{
-    useSignOUT(userID.id)
+    // useSignOUT(userID.id)
     setLogged(!logged)
-    // Alert.alert(`Logged out successfully`)
+    Alert.alert(`Logged out successfully`)
   }
 
   const setData = async (value)=>{
@@ -44,15 +44,15 @@ export default function Login() {
 
     let {data,error} = await signIn(user)
     if(error){
-      // Alert.alert(
-      //   "try again"
-      // )
+      Alert.alert(
+        "Welcome"
+      )
       console.log(error)
     }else{
       setData(data.response.user)
       console.log(data)
       await getData()
-      // Alert.alert(`Welcome ${data.response.user.name}`)
+      Alert.alert(`Welcome ${data.response.user.name}`)
     }
     setLogged(!logged)
   }
@@ -69,8 +69,13 @@ export default function Login() {
       <Text style={styles.title}>Sign in</Text>
       <TextInput style={styles.input} placeholder='example@gmail.com'/>
       <TextInput style={styles.input} placeholder='password' secureTextEntry={true}/>
+      {!logged ? 
       <Button style={styles.signIn} title='Sign in' onPress={handleSubmit}></Button>
+      :
+      
       <Button style={styles.signIn} title='Sign out' onPress={signOUT}></Button>
+      }
+      
       <Footer />
     <Text style={styles.goTop} onPress={()=> scrollRef.current.scrollTo({ x: 0, y: 0, animated: true })}>Top</Text>
     </View>

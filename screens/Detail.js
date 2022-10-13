@@ -34,7 +34,7 @@ export default function Detail(props) {
 
 
             <View style={styles.descriptionTwo}>
-                <Text style={styles.detail}>Allergens: {item.allergens.map(item => item)}</Text>
+                <Text style={styles.detail}>Allergens: {item.allergens?.map(item => item)}</Text>
                 <View>
                     <Text style={styles.detail}>Details </Text>
                     <Text style={styles.detail}>Time: {item.preptime} min</Text>
@@ -43,7 +43,7 @@ export default function Detail(props) {
             </View>
             <Text style={styles.ingredientsTitle}>Ingredients</Text>
             <View style={styles.ingredientBox}>
-                {item.ingredients.map((item,index) =>(
+                {item.ingredients?.map((item,index) =>(
                     <View style={styles.ingredients} key={index}>
                         <Text style={styles.detail}>{item.quantity}</Text>
                         <Text style={styles.detail}>{item.name}</Text>
@@ -59,7 +59,7 @@ export default function Detail(props) {
         <Header />
         <ImageBackground style={styles.banner} source={require("../assets/banner.webp")}  resizeMode="cover">
         </ImageBackground>
-        {printRecipe(data)}
+        {/* {printRecipe(data)} */}
         <Footer />
         <Text style={styles.goTop} onPress={()=> scrollRef.current.scrollTo({ x: 0, y: 0, animated: true })}>Top</Text>
         </View>

@@ -66,7 +66,7 @@ const showRecipesCards = (recipes) =>{
   return (
     <View>
       <Text style={styles.category}>Category: {categorySelected ? categorySelected : 'All'} ({allFilteredRecipes.length})</Text>
-      {recipes.map((recipe,index) => <CardRecipe  key={index} id={recipe._id} title={recipe.title} image={recipe.image}/> )}
+      {recipes?.map((recipe,index) => <CardRecipe  key={index} id={recipe._id} title={recipe.title} image={recipe.image}/> )}
     </View>
   )
 }

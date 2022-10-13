@@ -12,10 +12,10 @@ export default function Footer() {
         <Image style={styles.img} source={require("../assets/tg.png")} />
         <Image style={styles.img} source={require("../assets/yt.png")} />
       </View>
-      <Text>©2022 LS Food Co</Text>
+      <Text style={styles.socialtext}>©2022 LS Food Co</Text>
       <View>
         <Image style={styles.logo} source={require("../assets/mostachon.png")} />
-        <Text>Terms / About Us</Text>
+        <Text style={styles.socialtext}>Terms / About Us</Text>
       </View>
     </View>
   )
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     logo:{
         width:90,
         height:90,
+        alignSelf:"center"
     },
     social:{
         display:"flex",
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
         marginVertical:25
     },
     socialtext:{
-      marginTop:20
+      fontSize:22
     }
     
 })

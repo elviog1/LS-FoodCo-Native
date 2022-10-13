@@ -8,6 +8,26 @@ const usersApi = createApi({
     }),
 
     endpoints: (builder)=>({
+        userSignIn: builder.mutation({
+            query: (user, token) => ({
+                url: "/auth/signin",
+                method: "POST",
+                body: user,
+                headers: { "Authorization": "Bearer " + token }
+            }),
+        }),
+        userSignOut: builder.mutation({
+            query: (token) => ({
+                url: "/auth/signout",
+                method: "POST",
+                headers: { "Authorization": "Bearer " + token }
+            })
+        }),
+
+
+
+
+
         signout: builder.mutation({
             query: (data) =>({
                 url: `/auth/signout/${data}`,
@@ -26,4 +46,4 @@ const usersApi = createApi({
 })
 
 export default usersApi
-export const {useSignoutMutation,useSigninMutation} = usersApi
+export const {useUserSignOutMutation,useUserSignInMutation,useSignoutMutation,useSigninMutation} = usersApi

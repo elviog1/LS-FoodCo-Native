@@ -1,4 +1,4 @@
-import { View, Text, Button,StyleSheet } from 'react-native'
+import { View, Text, Button,StyleSheet, Alert } from 'react-native'
 import React, { useRef } from 'react'
 import { ScrollView, TextInput } from 'react-native-gesture-handler'
 import MapView from "react-native-maps";
@@ -30,7 +30,7 @@ export default function Contact() {
         <TextInput style={styles.input} placeholder='Email' />
         <TextInput style={styles.textarea} multiline={true} numberOfLines={10} placeholder="leave us a message..."/>
       </View>
-      <Button title='Send'></Button>
+      <Button onPress={()=> Alert.alert(`Thanks for your comment !`)} title='Send'></Button>
     </View>
     <Footer />
     <Text style={styles.goTop} onPress={()=> scrollRef.current.scrollTo({ x: 0, y: 0, animated: true })}>Top</Text>

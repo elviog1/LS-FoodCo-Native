@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     position:"relative",
     bottom:200,
     width:200,
-    right:-150,
+    right:-110,
   },
   text:{
     textAlign:"center",

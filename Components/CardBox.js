@@ -20,7 +20,7 @@ export default function CardBox() {
     )
   return (
     <View style={styles.container}>
-        {data.map(printBoxes)}
+        {data?.map(printBoxes)}
     </View>
   )
 }
