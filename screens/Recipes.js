@@ -108,9 +108,11 @@ const styles = StyleSheet.create({
   },
   search:{
     backgroundColor:"#a7bb92",
-    padding:5,
+    paddingLeft:15,
+    paddingVertical:15,
     borderRadius:8,
-    margin:20
+    margin:20,
+    fontSize:20
   },
   categoryBox:{
     flexDirection:"row",
@@ -129,7 +131,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 25,
     paddingVertical:20,
-    backgroundColor:"#32D",
+    backgroundColor:"#a7bb92",
     width: "100%",
     textAlign: "center",
     fontWeight: "bold"

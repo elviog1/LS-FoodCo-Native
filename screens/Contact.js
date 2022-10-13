@@ -17,15 +17,17 @@ export default function Contact() {
       <Text style={styles.description}>🏠 4838 E Kings Canyon Rd, Fresno, CA 93727</Text>
       <Text style={styles.description}>Most of our client relationships are measured in years, not months.Learn more about how we can improve your ecommerce generated from, and within, social media.</Text>
       <View>
-      <MapView
-        style={styles.map}
-        initialRegion={{
-          latitude: 36.82224,
-        longitude: -119.78920,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01
-      }}
-      />
+        <View style={styles.mapBox}>
+        <MapView
+          style={styles.map}
+          initialRegion={{
+            latitude: 36.82224,
+            longitude: -119.78920,
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01
+          }}
+          />
+        </View>
         <TextInput style={styles.input} placeholder='Name' />
         <TextInput style={styles.input} placeholder='Email' />
         <TextInput style={styles.textarea} multiline={true} numberOfLines={10} placeholder="leave us a message..."/>
@@ -64,14 +66,17 @@ const styles = StyleSheet.create({
     fontSize:20,
     paddingVertical:10
   },
+  mapBox:{
+    borderWidth:2
+  },
   map:{
-    height: 300
+    height: 300,
   },
   goTop:{
     color: "white",
     fontSize: 25,
     paddingVertical:20,
-    backgroundColor:"#32D",
+    backgroundColor:"#96aa81",
     width: "100%",
     textAlign: "center",
     fontWeight: "bold"

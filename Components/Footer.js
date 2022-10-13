@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
         marginVertical:25
     },
     socialtext:{
-      fontSize:22
+      fontSize:22,
+      paddingTop:15
     }
     
 })

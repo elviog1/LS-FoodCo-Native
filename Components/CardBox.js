@@ -5,7 +5,6 @@ import { useAllBoxesQuery } from '../Features/boxesApi'
 export default function CardBox() {
 
     const {data} = useAllBoxesQuery()
-    console.log(data)
     const printBoxes = (item)=> (
         <View style={styles.containerBox} key={item.name}>
             <Image style={styles.img} source={{uri:`${item.recipe.image}`}} />

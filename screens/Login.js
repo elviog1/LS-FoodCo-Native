@@ -19,7 +19,7 @@ export default function Login() {
   const signOUT = ()=>{
     // useSignOUT(userID.id)
     setLogged(!logged)
-    Alert.alert(`Logged out successfully`)
+    Alert.alert(`Thanks for your visited !`)
   }
 
   const setData = async (value)=>{
@@ -45,7 +45,7 @@ export default function Login() {
     let {data,error} = await signIn(user)
     if(error){
       Alert.alert(
-        "Welcome"
+        "Welcome to Lord Squidly Food Co"
       )
       console.log(error)
     }else{
@@ -70,10 +70,10 @@ export default function Login() {
       <TextInput style={styles.input} placeholder='example@gmail.com'/>
       <TextInput style={styles.input} placeholder='password' secureTextEntry={true}/>
       {!logged ? 
-      <Button style={styles.signIn} title='Sign in' onPress={handleSubmit}></Button>
+      <Text style={styles.signIn} title='Sign in' onPress={handleSubmit}>Sign in</Text>
       :
       
-      <Button style={styles.signIn} title='Sign out' onPress={signOUT}></Button>
+      <Text style={styles.signout} title='Sign out' onPress={signOUT}>Sign out</Text>
       }
       
       <Footer />
@@ -89,13 +89,26 @@ const styles = StyleSheet.create({
         alignItems:"center",
     },
     input:{
-        backgroundColor:"#AAA",
-        paddingVertical:15,
-        width: 300,
-        marginVertical:8
+      paddingVertical:15,
+      backgroundColor:"#a7bb92",
+      marginTop:8,
+      borderRadius:10,
+      paddingStart:10,
+      width:300
     },
     signIn:{
-        marginTop:10
+        marginTop:20,
+        backgroundColor:"#dde972",
+        paddingVertical:15,
+        paddingHorizontal:30,
+        borderRadius:9
+      },
+      signout:{
+        marginTop:20,
+        backgroundColor:"#dde9aa",
+        paddingVertical:15,
+        paddingHorizontal:30,
+        borderRadius:9
     },
     title:{
         fontSize:40
@@ -104,7 +117,7 @@ const styles = StyleSheet.create({
       color: "white",
       fontSize: 25,
       paddingVertical:20,
-      backgroundColor:"#32D",
+      backgroundColor:"#a7bb92",
       width: "100%",
       textAlign: "center",
       fontWeight: "bold"

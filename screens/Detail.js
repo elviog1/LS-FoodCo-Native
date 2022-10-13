@@ -87,14 +87,21 @@ const styles = StyleSheet.create({
       buttons:{
         flexDirection:"row",
         alignItems:"center",
-        backgroundColor:"#a7bb92",
+        // backgroundColor:"#a7bb92",
         borderRadius:10,
-        width:"50%",
+        width:"100%",
         justifyContent:"space-around"
+        
       },
       button:{
-        margin:10,
+        margin:20,
         padding:10,
+        backgroundColor:"#a7bb92",
+        width:120,
+        textAlign:"center",
+        fontSize:18,
+        borderRadius:9,
+        borderWidth:2
       },
       category:{
         fontSize:25
@@ -135,7 +142,7 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 25,
         paddingVertical:20,
-        backgroundColor:"#32D",
+        backgroundColor:"#a7bb92",
         width: "100%",
         textAlign: "center",
         fontWeight: "bold"

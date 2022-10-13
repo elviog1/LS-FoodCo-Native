@@ -18,7 +18,6 @@ export default function CardRecipe(props) {
     </View>
     )
 
-    console.log(allCard)
   return (
     <>
         {printRecipe(allCard)}

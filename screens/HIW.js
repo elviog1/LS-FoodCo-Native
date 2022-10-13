@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
 import Footer from '../Components/Footer'
 import Header from '../Components/Header'
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 export default function HIW() {
 
@@ -17,6 +19,8 @@ export default function HIW() {
     <ScrollView ref={scrollRef}>
     <View>
       <Header />
+      
+     
       <Text style={styles.title}>How it works?</Text>
       <View style={styles.imgBox}>
         <View style={styles.box}>
@@ -48,18 +52,22 @@ export default function HIW() {
         <Text style={styles.textBox}>Our recipes allow you to hit your nutritional and fitness goals, without sacrificing the great flavours and vibrancy that come from a freshly prepared meal.</Text>
 
         <View style={styles.box.choose}>
+          <Icon style={styles.icon} name='phone' size={50} color="brown"/>
           <Text style={styles.textBox2}>TOP QUALITY AND TASTE</Text>
           <Text style={styles.textBox2}>Focusing on quality, LS Food brings only the best products, made with prime ingredients that are selected with care.</Text>
         </View>
         <View style={styles.box.choose}>
+          <Icon style={styles.icon} name='check' size={50} color="brown"/>
           <Text style={styles.textBox2}>FOOD SAFETY</Text>
           <Text style={styles.textBox2}>Our ambition is to safeguard the health of our customers. All of our providers are certified according to International Food Standards.</Text>
         </View>
         <View style={styles.box.choose}>
+          <Icon style={styles.icon} name='car' size={50} color="brown"/>
           <Text style={styles.textBox2}>EASY DELIVERIES</Text>
           <Text style={styles.textBox2}>Our logistic team is ready to offer a flexible delivery service, in order to ensure the products arrive in optimal conditions.</Text>
         </View>
         <View style={styles.box.choose}>
+          <Icon style={styles.icon} name='star' size={50} color="brown"/>
           <Text style={styles.textBox2}>INNOVATIVE AND AWARDED</Text>
           <Text style={styles.textBox2}>In order to propose new culinary experiences, our staff continuosly create unique recipes and concepts.</Text>
         </View>
@@ -67,11 +75,11 @@ export default function HIW() {
         <View>
           <Text style={styles.title}>Frequently Asked Questions</Text>
 
-            <Text  style={styles.textBox2}>1. What's in the box?</Text>
+            <Text  style={styles.list}>1. What's in the box?</Text>
               <Text style={styles.textBox2}>All the pre-portioned ingredients to cook the delicious, healthy recipes you've chosen - all our meat is free-range and ethically sourced from small farms, fresh fish is sustainably caught and our vegetables are cultivated in the most natural way possible.</Text>
-            <Text style={styles.textBox2}>2. How does delivery work?</Text>
+            <Text style={styles.list}>2. How does delivery work?</Text>
             <Text style={styles.textBox2}>We offer free delivery nationwide. On day of delivery, you'll get a text with an eta but you don't need to be in to receive your box. Our insulated boxes will be keep everything fresh for up to 48 hours and your box will be left in your designated safe place.</Text>
-            <Text style={styles.textBox2}>3. Do you offer a guarantee?</Text>
+            <Text style={styles.list}>3. Do you offer a guarantee?</Text>
             <Text style={styles.textBox2}>If you're not entirely happy, we offer 100% money-back guarantee.</Text>
             
         </View>
@@ -118,12 +126,19 @@ const styles = StyleSheet.create({
     paddingHorizontal:30,
     backgroundColor:"#a7bb92",
     width:"100%",
+    paddingVertical:15
   },
   box:{
     alignItems:"center",
     choose:{
       marginVertical:30
     }
+  },
+  icon:{
+    backgroundColor:"#a7bb92",
+    alignItems:"center",
+    textAlign:"center",
+    paddingTop:20
   },
   number:{
     width:80,
@@ -140,10 +155,17 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 25,
     paddingVertical:20,
-    backgroundColor:"#32D",
+    backgroundColor:"#a7bb92",
     width: "100%",
     textAlign: "center",
     fontWeight: "bold"
   },
-  
+  list:{
+    fontSize:22,
+      textAlign:"center",
+      paddingHorizontal:30,
+      backgroundColor:"#a7bb92",
+      width:"100%",
+      
+  }
 })

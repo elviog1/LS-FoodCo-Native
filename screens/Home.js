@@ -3,19 +3,28 @@ import React, { useRef } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import CardBox from '../Components/CardBox'
+import { useNavigation } from '@react-navigation/native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 export default function Home() {
     const scrollRef = useRef()
+    const navigation =useNavigation()
   return (
     <ScrollView ref={scrollRef}>
         <View>
         <Header />
         {/* <Image style={styles.img} source={require("../assets/banner.webp")} /> */}
-        <ImageBackground style={styles.banner} source={require("../assets/banner.webp")}  resizeMode="cover">
+        <ImageBackground style={styles.bannerwelcome} source={require("../assets/banner.webp")}  resizeMode="cover">
         </ImageBackground>
 
-        <Text style={styles.bold}>Good heath and well-being go hand in hand</Text>
+        <View style={styles.buttonBox}>
+            <Text style={styles.recipesButton} onPress={()=>navigation.navigate("Recipes")}>Check recipes</Text>
+        </View>
+        <Text style={styles.bold}>HEALTHY EATING DONT'T HAVE TO BE A STRUGGLE</Text>
+        
+
         <View style={styles.textoneBox}>
+        <Text style={styles.text}>Good heath and well-being go hand in hand</Text>
           <Text style={styles.textOne}>Every recipe in this site is reviewed by qualified nutritionists with your health and fitness goals in mind. No more counting calories, carbs or protein intake, we've got you covered.</Text>
           <Text style={styles.textOne}>Meals you can cook yourself! Our community bring you dishes that bridge the gap between functional meal-prep and the best dine-in experience.</Text>
         </View>
@@ -50,7 +59,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 25,
     paddingVertical:20,
-    backgroundColor:"#32D",
+    backgroundColor:"#a7bb92",
     width: "100%",
     textAlign: "center",
     fontWeight: "bold"
@@ -60,38 +69,73 @@ const styles = StyleSheet.create({
     marginTop:30,
     alignItems:"center",
     justifyContent:"center",
-    opacity:.7
+
+  },
+  bannerwelcome:{
+    height:300,
+    // marginTop:30,
+    alignItems:"center",
+    justifyContent:"center",
+    opacity:.7,
   },
   textBox2:{
     backgroundColor:"#f9e972",
     fontWeight:"bold",
-    fontSize:22,
+    fontSize:30,
     textAlign:"center"
   },
   textOne:{
     paddingHorizontal:20,
-    paddingVertical:10
+    paddingVertical:10,
+    fontSize:22
   },
   textoneBox:{
     marginTop:-70
   },
   textDescription:{
     padding:20,
-    backgroundColor:"#f9e972"
+    backgroundColor:"#f9e972",
+    fontSize:22
   },
   bold:{
     fontWeight:"bold",
-    fontSize:25,
+    fontSize:35,
     textAlign:"center",
     position:"relative",
-    bottom:200,
-    width:200,
-    right:-110,
+    bottom:320,
+    width:"100%",
+    textShadowColor:"black",
+    textShadowOffset: {width:4,height:4},
+    textShadowRadius: 1,
+    color:"white"
+
   },
   text:{
+    fontWeight:"bold",
     textAlign:"center",
-    justifyContent:"center",
-    display:"flex",
+    fontSize:30,
+    position:"absolute",
+    // bottom:60
+    top:-95,
+    paddingHorizontal:20
   },
-  
+  recipesButton:{
+    backgroundColor:"#f9e972",
+    fontSize:22,
+    width:180,
+    paddingVertical:10,
+    textAlign:"center",
+    alignSelf:"center",
+    position:"relative",
+    borderWidth:2,
+    borderRadius:9,
+    bottom:100,
+    borderColor:"#a7bb92",
+
+    textShadowColor:"white",
+    textShadowOffset: {width:2,height:2},
+    textShadowRadius: 1,
+    fontWeight:"bold"
+
+  }
 })
