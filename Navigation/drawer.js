@@ -18,7 +18,6 @@ export default function Drawer(){
             <DrawerNav.Screen name='Recipes' component={Recipes} />
             <DrawerNav.Screen name='Contact' component={Contact} />
             <DrawerNav.Screen name='Login' component={Login} />
-            <DrawerNav.Screen name='Detail' component={Detail} />
         </DrawerNav.Navigator>
     </>
     )
