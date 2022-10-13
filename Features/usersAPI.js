@@ -15,10 +15,11 @@ const usersApi = createApi({
             }),
         }),
         signin: builder.mutation({
-            query: (data) =>({
-                url: `/auth/signin`,
-                method: 'POST',
-                body:data,              
+            query: (user, token) => ({
+                url: "/auth/signin",
+                method: "POST",
+                body: user,
+                headers: { "Authorization": "Bearer " + token }
             }),
         })
     })

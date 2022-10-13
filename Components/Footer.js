@@ -24,7 +24,8 @@ export default function Footer() {
 const styles = StyleSheet.create({
     container:{
         display:"flex",
-        alignItems:"center"
+        alignItems:"center",
+        // backgroundColor:"#a7bb92",
     },
     img:{
         width:40,

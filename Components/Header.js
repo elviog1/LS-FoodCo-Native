@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     container:{
         alignItems:"center",
         paddingTop:10,
-
+        // backgroundColor:"#a7bb92",
     },
     img:{
         maxWidth:150,

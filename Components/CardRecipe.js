@@ -1,14 +1,29 @@
 import { View, Text,Image,StyleSheet } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable'
 
 export default function CardRecipe(props) {
-  return (
-    <View style={styles.container}>
+    const navigation = useNavigation()
+    const allCard = props
+
+    const printRecipe = (item) =>(
+        <View style={styles.container}>
         <View style={styles.containerCard}>
-                <Image style={styles.img} source={{uri:`${props.image}`}} />
-                <Text style={styles.name}>{props.title}</Text>
+            {/* <Pressable onPress={() =>navigation.navigate('',{id:item._id})}> */}
+                    <Image style={styles.img} source={{uri:`${item.image}`}} />
+                    <Text style={styles.name}>{item.title}</Text>
+            {/* </Pressable> */}
         </View>
     </View>
+    )
+
+    console.log(allCard)
+  return (
+    <>
+        {printRecipe(allCard)}
+        {/* {allCard?.map(printRecipe)} */}
+    </>
   )
 }
 const styles = StyleSheet.create({

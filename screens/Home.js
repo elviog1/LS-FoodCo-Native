@@ -5,19 +5,6 @@ import Footer from '../Components/Footer'
 
 export default function Home() {
     const scrollRef = useRef()
-
-    // const screenHeight = Dimensions.get('window').height;
-    // const screenWidth = Dimensions.get('window').width;
-
-    // const BackgroundBanner = ()=>{
-    //   return (
-    //     <View>
-    //       <ImageBackground style={styles.banner} source={require("../assets/banner.webp")} resizeMode="cover">
-    //       <Text styles={styles.textbanner}>aasdasdsdAA</Text>
-    //     </ImageBackground>
-    //     </View>
-    //   )
-    // }
   return (
     <ScrollView ref={scrollRef}>
         <View>
@@ -27,8 +14,10 @@ export default function Home() {
         </ImageBackground>
 
         <Text style={styles.bold}>Good heath and well-being go hand in hand</Text>
-        <Text style={styles.textOne}>Every recipe in this site is reviewed by qualified nutritionists with your health and fitness goals in mind. No more counting calories, carbs or protein intake, we've got you covered.</Text>
-        <Text style={styles.textOne}>Meals you can cook yourself! Our community bring you dishes that bridge the gap between functional meal-prep and the best dine-in experience.</Text>
+        <View style={styles.textoneBox}>
+          <Text style={styles.textOne}>Every recipe in this site is reviewed by qualified nutritionists with your health and fitness goals in mind. No more counting calories, carbs or protein intake, we've got you covered.</Text>
+          <Text style={styles.textOne}>Meals you can cook yourself! Our community bring you dishes that bridge the gap between functional meal-prep and the best dine-in experience.</Text>
+        </View>
 
         <ImageBackground style={styles.banner} source={require("../assets/banner2.jpg")} resizeMode="cover">
         </ImageBackground>
@@ -65,26 +54,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold"
   },
-  // img:{
-  //   height:screenHeight,
-  //   resizeMode:"contain",
-  //   width:screenWidth
-  // },
   banner:{
     height:300,
     marginTop:30,
     alignItems:"center",
     justifyContent:"center",
-
+    opacity:.7
   },
-  // textbanner:{
-  //   backgroundColor:"red",
-  //   width:100,
-  //   height:100,
-  //   margin: 12,
-  //   borderWidth: 2,
-  //   padding: 10,
-  // },
   textBox2:{
     backgroundColor:"#f9e972",
     fontWeight:"bold",
@@ -92,7 +68,11 @@ const styles = StyleSheet.create({
     textAlign:"center"
   },
   textOne:{
-    padding:20
+    paddingHorizontal:20,
+    paddingVertical:10
+  },
+  textoneBox:{
+    marginTop:-70
   },
   textDescription:{
     padding:20,
@@ -100,8 +80,12 @@ const styles = StyleSheet.create({
   },
   bold:{
     fontWeight:"bold",
-    fontSize:22,
-    textAlign:"center"
+    fontSize:25,
+    textAlign:"center",
+    position:"relative",
+    bottom:200,
+    width:200,
+    right:-150,
   },
   text:{
     textAlign:"center",
