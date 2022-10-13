@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     }
   },
   search:{
-    backgroundColor:"#BBB",
+    backgroundColor:"#a7bb92",
     padding:5,
     borderRadius:8,
     margin:20

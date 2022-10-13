@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     },
     containerCard:{
         borderWidth:3,
-        borderColor:"red",
+        borderColor:"#a7bb92",
         borderRadius:20
     },
     name:{

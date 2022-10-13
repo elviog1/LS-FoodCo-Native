@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     borderRadius:10,
     alignItems:"center",
     marginTop:40,
-    borderColor:"#f9e972",
+    borderColor:"#a7bb92",
     borderWidth:3
   },
   textBox:{
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     textAlign:"center",
     fontSize:17,
     paddingHorizontal:30,
-    backgroundColor:"#f9e972",
+    backgroundColor:"#a7bb92",
     width:"100%",
   },
   box:{
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   number:{
     width:80,
     height:80,
-    backgroundColor:"#f9e972",
+    backgroundColor:"#a7bb92",
     borderRadius:50,
     position:"relative",
     bottom:60,

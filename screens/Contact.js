@@ -50,8 +50,10 @@ const styles = StyleSheet.create({
   },
   input:{
     paddingVertical:15,
-    backgroundColor:"#AAA",
+    backgroundColor:"#a7bb92",
     marginTop:8,
+    borderRadius:10,
+    paddingStart:10
   },
   contact:{
     fontSize:40,
