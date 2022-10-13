@@ -2,6 +2,7 @@ import { View, Text, ScrollView,StyleSheet,Image, ImageBackground,TextInput } fr
 import React, { useRef } from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
+import CardBox from '../Components/CardBox'
 
 export default function Home() {
     const scrollRef = useRef()
@@ -35,7 +36,7 @@ export default function Home() {
         </ImageBackground>
         <Text style={styles.textBox2}>Zero to landfill</Text>
         <Text style={styles.textDescription}>All our packaging is recyclable or re-useable and we operate a no-waste policy in our store.</Text>
-
+        <CardBox />
         <Footer />
         </View>
         <Text style={styles.goTop} onPress={()=> scrollRef.current.scrollTo({ x: 0, y: 0, animated: true })}>Top</Text>

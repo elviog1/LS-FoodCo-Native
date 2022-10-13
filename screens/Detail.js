@@ -1,5 +1,5 @@
 import { View,Button, Text,StyleSheet, ImageBackground,Image } from 'react-native'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { ScrollView } from 'react-native-gesture-handler'
 import { useGetOneRecipeQuery } from '../Features/recipesApi';
 import { useNavigation } from '@react-navigation/native';
@@ -7,13 +7,18 @@ import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 
 export default function Detail(props) {
-    let id 
     // props.route.params.id? id=props.route.params.id: id=props
     const scrollRef = useRef()
     let navigation= useNavigation()
     const {data} = useGetOneRecipeQuery("633f95361b9e7faf8aceb1f2")
-    console.log(props.route)
+    const [recipe,setRecipe] = useState()
+    // console.log(props.route)
     // console.log(data)
+    useEffect(()=>{
+        if(data){
+            setRecipe(data)
+        }
+    },[data])
 
     const printRecipe = (item) =>(
         <View style={styles.container}>
